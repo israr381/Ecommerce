@@ -1,10 +1,12 @@
 import type { Route } from "./+types/home";
 import { useOutletContext } from "react-router";
 
+
 type AuthContext = {
   isLoggedIn: boolean;
   username: string;
 };
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,6 +14,7 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Welcome to the E-commerce app" },
   ];
 }
+
 
 export default function Home() {
   const { isLoggedIn, username } = useOutletContext<AuthContext>();
@@ -34,5 +37,7 @@ export default function Home() {
         </section>
       )}
     </main>
+
+
   );
 }
